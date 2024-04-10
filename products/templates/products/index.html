@@ -6,26 +6,28 @@
 {% endblock %}
 
 {% block content %}
-<!-- Page Content -->
-<section>
-    <!--    <div class="alert alert-light text-center" role="alert">-->
-    <!--        Информационное сообщение-->
-    <!--    </div>-->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1 class="mt-5">Store</h1>
-                <p>
-                    Нові образи та найкращі бренди на Store. 
-                    Безкоштовна доставка по всьому світу! Аутлет: до -70% Власний бренд. -20% новим покупцям.
-                </p>
-                <button id="start-purchase-btn" type="button" class="btn btn-lg">
-                    <a id="start-purchase-link" href="{% url 'products:index' %}">
-                        Почати покупки
-                    </a>
-                </button>
+    <!-- Page Content -->
+    <section>
+        <!--    <div class="alert alert-light text-center" role="alert">-->
+        <!--        Информационное сообщение-->
+        <!--    </div>-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mt-5">Store</h1>
+                    <p>
+                        Нові образи та найкращі бренди на Store. 
+                        Безкоштовна доставка по всьому світу! Аутлет: до -70% Власний бренд. -20% новим покупцям.
+                    </p>
+                    
+                    <button id="start-purchase-btn" type="button" class="btn btn-lg">
+                        <a id="start-purchase-link" href="{% url 'products:index' %}">
+                            Почати покупки
+                        </a>
+                    </button> 
+                    
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
