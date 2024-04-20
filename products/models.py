@@ -45,7 +45,7 @@ class Basket(models.Model):
     quantity = models.PositiveSmallIntegerField(default=0)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
-    object = BasketQuerySet.as_manager()
+    objects = BasketQuerySet.as_manager()
 
     def __str__(self):
         return f'Кошик: {self.user.username} | Товар: {self.product.name}'
