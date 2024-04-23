@@ -1,4 +1,3 @@
-
 class TitleMixin:
     title = None
 
