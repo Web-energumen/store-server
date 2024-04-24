@@ -142,5 +142,8 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # Sending emails
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_CHARSET = 'UTF-8'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'oleksandr.doroshev@gmail.com'
+EMAIL_HOST_PASSWORD = 'mfimpdpqfzdxiunj'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True

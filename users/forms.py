@@ -46,11 +46,15 @@ class UserRegisterForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
 
     def save(self, commit=True):
-        user = super(UserRegisterForm, self).save(commit=True)
+        user = super(UserRegisterForm, self).save(commit=False)  # Получаем объект пользователя без сохранения
+        user.is_verified_email = False  # Устанавливаем флаг is_verified_email в False
+        user.save()  # Сохраняем пользователя в базе данных
+
         expiration = now() + timedelta(hours=48)
         record = EmailVerification.objects.create(code=uuid.uuid4(), user=user, expiration=expiration)
         record.send_verification_email()
-        return user
+
+        return user  # Возвращаем объект пользователя
 
 
 class UserProfileForm(UserChangeForm):

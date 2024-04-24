@@ -1,12 +1,11 @@
 {% extends 'users/base.html' %}
-{% load static %}
 
 {% block content %}
     <main>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
-                    {% if form.error_class %}
+                    {% if form.errors %}
                         <div class="alert alert-warning alert-dismissible fade show" role="alert"
                              style="margin-top: 50px;">
                             {{ form.errors }}
@@ -24,37 +23,49 @@
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="{{ form.first_name.id_for_label }}">Ім'я</label>
+                                            <label class="small mb-1" for="{{ form.first_name.id_for_label }}">
+                                                Ім'я
+                                            </label>
                                             {{ form.first_name }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="{{ form.last_name.id_for_label }}">Прізвище</label>
+                                            <label class="small mb-1" for="{{ form.last_name.id_for_label }}">
+                                                Прізвище
+                                            </label>
                                             {{ form.last_name }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="{{ form.username.id_for_label }}">Ім'я користувача</label>
+                                        <label class="small mb-1" for="{{ form.username.id_for_label }}">
+                                            Ім'я користувача
+                                        </label>
                                         {{ form.username }}
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="{{ form.email.id_for_label }}">Адреса електронної пошти</label>
+                                        <label class="small mb-1" for="{{ form.email.id_for_label }}">
+                                            Адреса електронної пошти
+                                        </label>
                                         {{ form.email }}
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="{{ form.password1.id_for_label }}">Пароль</label>
+                                            <label class="small mb-1" for="{{ form.password1.id_for_label }}">
+                                                Пароль
+                                            </label>
                                             {{ form.password1 }}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="{{ form.password2.id_for_label }}">Підтвердження пароля</label>
+                                            <label class="small mb-1" for="{{ form.password2.id_for_label }}">
+                                                Підтвердження пароля
+                                            </label>
                                             {{ form.password2 }}
                                         </div>
                                     </div>
@@ -65,7 +76,11 @@
                             </form>
                         </div>
                         <div class="card-footer text-center">
-                            <div class="small"><a href="{% url 'users:login' %}">Вже є акаунт? Авторизуватися</a></div>
+                            <div class="small">
+                                <a href="{% url 'users:login' %}">
+                                    Уже є акаунт? Авторизуватися
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
