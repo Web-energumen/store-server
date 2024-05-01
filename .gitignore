@@ -46,6 +46,9 @@ out/
 # JIRA plugin
 atlassian-ide-plugin.xml
 
+# flake8
+.flake8
+
 # Python #
 *.py[cod]
 *$py.class

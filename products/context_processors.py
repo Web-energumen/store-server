@@ -13,4 +13,3 @@ def baskets(request):
         'total_sum': total_sum,
         'total_quantity': total_quantity
     }
-
