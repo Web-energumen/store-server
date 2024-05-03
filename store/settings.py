@@ -38,9 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
 
     'products',
     'users',
+
 ]
 
 MIDDLEWARE = [
@@ -51,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'store.urls'
@@ -155,8 +164,28 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # Sending emails
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'oleksandr.doroshev@gmail.com'
-EMAIL_HOST_PASSWORD = 'mfimpdpqfzdxiunj'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'oleksandr.doroshev@gmail.com'
+# EMAIL_HOST_PASSWORD = 'mfimpdpqfzdxiunj'
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# OAuth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    }
+}
