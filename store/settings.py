@@ -180,12 +180,13 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # Sending emails
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'oleksandr.doroshev@gmail.com'
-# EMAIL_HOST_PASSWORD = 'mfimpdpqfzdxiunj'
-# EMAIL_PORT = 465
-# EMAIL_USE_SSL = True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'oleksandr.doroshev@gmail.com'
+EMAIL_HOST_PASSWORD = 'mfimpdpqfzdxiunj'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # OAuth
@@ -211,3 +212,27 @@ SOCIALACCOUNT_PROVIDERS = {
 
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        '': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
