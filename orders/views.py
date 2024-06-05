@@ -1,5 +1,5 @@
-from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 
 from common.views import TitleMixin
 from orders.forms import OrderForm
