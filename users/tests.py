@@ -52,5 +52,3 @@ class UserRegistrationViewTests(TestCase):
 
         self.assertEqual(response.status_code, HTTPStatus.OK)
         self.assertContains(response, 'Користувач з таким ім\'ям вже існує.', html=True)
-
-

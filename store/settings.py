@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.humanize',
 
     'allauth',
     'allauth.account',
@@ -117,7 +118,7 @@ DATABASES = {
         'NAME': 'store_db',
         'USER': 'postgres',
         'PASSWORD': '12qwerty34',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -235,4 +236,3 @@ LOGGING = {
         },
     },
 }
-
