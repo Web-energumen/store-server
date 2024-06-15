@@ -236,3 +236,10 @@ LOGGING = {
         },
     },
 }
+
+# Stripe
+
+STRIPE_PUBLIC_KEY = ('pk_test_51PPmGCFzRim9In7sL83xhn7DD87S26ZuS8QGWFOxjvSJt'
+                     'TvTm5T9jVXFk6iFYPEbcCCHkW2LH7KY9HoVctVu5KHm00oBT5RGrZ')
+STRIPE_SECRET_KEY = ('sk_test_51PPmGCFzRim9In7sFJzTjd8ObLU6JJWUDrRWIDudV6ZPr'
+                     'JRG3SaiKUYnJfJGk0JwjPgN572ApXdc6QXsHwhgMZBx00mGlYOxRp')
