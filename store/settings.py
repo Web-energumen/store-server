@@ -238,8 +238,10 @@ LOGGING = {
 }
 
 # Stripe
+# command stripe listen --forward-to localhost:8000/webhook/stripe/
 
 STRIPE_PUBLIC_KEY = ('pk_test_51PPmGCFzRim9In7sL83xhn7DD87S26ZuS8QGWFOxjvSJt'
                      'TvTm5T9jVXFk6iFYPEbcCCHkW2LH7KY9HoVctVu5KHm00oBT5RGrZ')
 STRIPE_SECRET_KEY = ('sk_test_51PPmGCFzRim9In7sFJzTjd8ObLU6JJWUDrRWIDudV6ZPr'
                      'JRG3SaiKUYnJfJGk0JwjPgN572ApXdc6QXsHwhgMZBx00mGlYOxRp')
+STRIPE_WEBHOOK_SECRET = ('whsec_9932d2b8fe65114b34854489dadf22e5780cc3d9e1ac463071c9778e196de38c')
