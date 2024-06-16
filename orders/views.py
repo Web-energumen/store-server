@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from common.views import TitleMixin
 from orders.forms import OrderForm
 from products.models import Basket
+from orders.models import Order
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -70,20 +71,14 @@ def stripe_webhook_view(request):
 
     # Handle the checkout.session.completed event
     if event['type'] == 'checkout.session.completed':
-        # Retrieve the session. If you require line items in the response, you may include them by expanding line_items.
-        session = stripe.checkout.Session.retrieve(
-            event['data']['object']['id'],
-            expand=['line_items'],
-        )
-
-        line_items = session.line_items
+        session = event['data']['object']
         # Fulfill the purchase...
-        fulfill_order(line_items)
+        fulfill_order(session)
 
     return HttpResponse(status=200)
 
 
 def fulfill_order(session):
-    # TODO: fill me in
     order_id = int(session.metadata.order_id)
-    print("Fulfilling order")
+    order = Order.objects.get(id=order_id)
+    order.update_after_payment()
