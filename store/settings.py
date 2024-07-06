@@ -76,10 +76,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'debug_toolbar',
     'django_extensions',
+    'rest_framework',
 
+    'api',
+    'orders',
     'products',
     'users',
-    'orders',
 ]
 
 MIDDLEWARE = [
@@ -286,3 +288,11 @@ LOGGING = {
 STRIPE_PUBLIC_KEY = env.str('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = env.str('STRIPE_SECRET_KEY')
 STRIPE_WEBHOOK_SECRET = env.str('STRIPE_WEBHOOK_SECRET')
+
+
+# Django REST framework
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 3,
+}
